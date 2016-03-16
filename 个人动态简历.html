@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta   charset="utf-8" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css">
+	<style type="text/css">
+	*{margin: 0;padding: 0;box-sizing: border-box;}
+	ul{list-style: none}
+	body{
+		font-family: "Myriad Pro", Arial, "FZLanTingHei-R-GBK", 方正兰亭黑, "Microsoft YaHei", 微软雅黑, STHeiti, 华文黑体, SimSun, 宋体, sans-serif; 
+	}
+	a{text-decoration: none;color:#000;}
+
+	
+	/* .section1{
+		background: yellow;
+	}
+	.section2{
+		background: blue;
+	}
+	.section3{
+		background: orange;
+	}
+	.section4{
+		background: gray;
+	} */
+	.section{
+		position: relative;
+		background: #3573c6;
+	}
+	.slide{
+		font-size: 20px;
+		text-align: center;
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	#header{
+		font-size: 25px;
+		position: fixed;
+		top:0;
+		right:200px;
+		/* background: gray; */
+	}
+	#header ul>li{
+
+		float:left;
+		margin:0px 10px;
+		font-weight: 800;
+		color:rgba(0,0,0,.3);
+		padding-bottom:5px; 
+		cursor: pointer;
+		opacity: 0.3;
+	}
+	#header ul>li:hover{
+		color:rgba(0,0,0,1);
+		opacity: 1;
+	}
+	#header  .on{
+		color:rgba(0,0,0,1);
+		opacity: 1;
+		border-bottom: 3px solid orange;
+	}
+	.section1{
+			
+		background: url("banner2.jpg") no-repeat;
+		background-size: cover;
+		
+		color:orange;
+	}
+	.section1 #introduce{
+		
+		position: absolute;
+		font-size: 40px;
+		left:800px;
+		top:0px;
+		width: 600px;
+	}
+	.section1 #job{
+		
+		position: absolute;
+		font-size: 40px;
+		left:800px;
+		top:0px;
+		width: 600px;
+		height: 55px;
+	}
+	.section1 #down{
+		position: absolute;
+		font-size: 40px;
+		left:800px;
+		top:0px;
+		width: 600px;
+		height: 55px;
+	}
+	.section1 #down2{
+		position: absolute;
+		font-size: 40px;
+		left:850px;
+		top:60px;
+		height: 55px;
+	}
+	.section2 .pic{
+		height: 800px;
+		width: 500px;
+		position: absolute;
+		top:100px;
+		margin-left:50px;
+		left:-500px;
+	}
+	.section2 .pic h2{
+		height: 400px;
+		width: 30px;
+		background: #bde278;
+		float: left;
+		padding-top: 120px;
+	}
+	.section2 .pic img{
+		height: 400px;
+		width: 400px;
+		background: #bde278;
+		float: left;
+	}
+	.section2 .describe{
+		width: 700px;
+		height: 400px;
+		/* background: red; */
+		position: absolute;
+		top:100px;
+		/* left:550px; */
+		left:1300px;
+		color:#fff;
+	}
+	.section2 .describe>div{
+		height: 120px; 
+		padding-left:20px;
+	}
+	.section2 .de1{
+		background: #12bc6e;
+	}
+	.section2 .de2{
+		margin-top: 20px;
+		background: #0084ff;
+	}
+	.section2 .de3{
+		margin-top: 20px;
+		background: #e8a900;
+	}
+	.section3 h1{
+		width:300px;
+		height: 300px;
+		position: absolute;
+		top:50px;
+		left:50%;
+		margin-left: -150px;
+	} 
+	.section3 ul{
+		position: absolute;
+		top:150px;
+		height: 500px;
+		width: 1200px;
+		margin-left:150px;
+	}
+	.section3 ul>li{
+		float: left;
+		width: 600px;
+		height: 200px;
+		position: relative;
+		margin-bottom:50px;
+	}
+	.section3 img{
+		width: 200px;
+		height: 200px;
+		float: left;
+		position: absolute;
+		left: 400px;
+		z-index:1;
+	}
+	.section3 li>div{
+		width: 300px;
+		height: 200px;
+		background: red;
+		float: left;
+		position: absolute;
+		left: 200px;
+		padding: 50px 10px;
+	}
+	.section3 p{
+		margin:10px;
+	}
+	.section3 .div1{
+		background: #6a9700;
+	}
+	.section3 .div2{
+		background: #cc3a3a;
+	}
+	.section3 .div3{
+		background: #e8a100;
+	}
+	.section3 .div4{
+		background: #4397ff;
+	}
+	.section4>div{
+		position: absolute;
+		top: 100px;
+		float: left;
+	}
+	.section4 img{
+		width: 400px;
+		height: 400px;
+
+	}
+	.section4 img:hover{
+		transform: scale(1.2);
+	}
+	.section4 .word{
+		position: absolute;
+		left:500px;
+		top: 0px;
+	}
+	.section4 .contact{
+		position: absolute;
+		top:0;
+		background: orange;
+		left:1000px;
+		width: 400px;
+		height: 400px;
+		padding: 50px 20px 50px 20px;
+		font-size:20px;
+	}
+	.section4 .contact p+p{
+		margin-top:80px; 
+	}
+	</style>
+
+</head>
+<body>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquery.fullPage.min.js"></script>
+<div id="header">
+	<ul>
+		<li class="on"><a href="#page1">首页</a></li>
+		<li><a href="#page2">个人信息</a></li>
+		<li><a href="#page3">主要作品</a></li>
+		<li><a href="#page4">简历下载</a></li>	
+	</ul>
+</div>
+<div id="fullpage">
+	<div class="section section1">
+		<div class="slide"><img id="introduce" src="slide1.png"></div>
+		<div class="slide"><img id="job" src="slide2.png"></div>
+		<div class="slide"><img id="down" src="slide3.png"><img id="down2" src="down.png"></div>
+	</div>
+	<div class="section section2">
+		<div class="pic">
+			<h2>个人信息</h2>
+			<img src="lion.jpg"/>
+		</div>
+		<div class="describe">
+			<div class="de1">
+				<h3>基本信息</h3>
+				<p>姓名：易江南</p>
+				<p>性别：男</p>
+				<p>年龄：22</p>
+				<p> 现住址：北京市昌平区回龙观</p>
+			</div>
+			<div class="de2">
+				<h3>教育经历</h3>
+				<p>时间：2011~2015</p>
+				<p>院校：太原科技大学</p>
+				<p>学历：本科</p>
+				<p>专业：通信工程</p>
+			</div>
+			<div class="de3">
+				<h3>相关经验</h3>
+				<p>2015.2~2016.2 长沙云猴网（实习后转正）前端开发</p>
+				<p>2013.9~2015.3 兼职东莞星品铝业有限公司，东莞允睿自动化公司，电销总监（兼职）</p>
+				<p>2014.7~2014.9 任职于广州优柯玛信息科技有限公司。业务代表（实习）</p>
+				<p>2013.7~2013.9 任职于东莞星品铝业有限公司，网络优化专员（实习）</p>
+			</div>
+		</div>
+	</div>
+	<div class="section section3">
+		<h1>主要作品</h1>
+		<ul>
+			<li>
+				<img src="oppo.png">
+				<div class="div1">
+				<p>实现css+html制作网页</p>
+				<p>利用javascript原生制作各种特效</p>
+				<p>ajax交互渲染数据</p>
+				</div>
+			</li>
+			<li>
+				<img src="2048.jpg">
+				<div class="div2">
+					<p>严谨的游戏逻辑</p>
+					<p>简单风格的游戏界面UI</p>
+					<p>javascript制作游戏罗辑，jquery实现游戏动画</p>
+				</div>
+			</li>
+			<li>
+				<img src="saolei.jpg">
+				<div class="div3">
+					<p>对函数递归的充分利用</p>
+					<p>更加优良的算法</p>
+				</div>
+			</li>
+			<li>
+				<img src="fullpage.jpg">
+				<div class="div4">
+					<p>jquery插件的充分利用</p>
+					<p>利用jquery实现各种特效</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="section section4">
+		<div class="pdf div"><a href="jianli.pdf"><img src="pdf.png"></a></div>
+		<div class="word div"><a href="jianli.doc"><img src="word.png"></a></div>
+		<div class="contact div">
+			<p>联系电话：18674742580</p>
+			<p>邮箱地址：jiangnanyi8899@163.com</p>
+			<p>QQ：474989018</p>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript">
+	
+		$(document).ready(function(){
+			
+			$('#fullpage').fullpage({
+				//sectionsColor:['gray','#3573c6','orange','gray'], //设置背景色
+				controlArrows:true,//是否有箭头,移动端可以靠滑动来用
+				verticalCentered:true,//每一页的内容是否居中
+				resize:false,//字体是否随着窗口的缩放而缩放
+				scrollSpeed:2000, //页面的滚动速度
+				anchors:['page1','page2','page3','page4'],//为每一页加上锚链接
+				lockAnchors:true,
+				css3:true,//是否使用css3，css3的性能较高
+				/*
+				loopTop:true,
+				loopBottom:true,
+				loopHorizontal:false,
+				*/
+				//以上三个为是否循环，第三个属性为幻灯片是否循环，默认为true，前两个默认为false
+				//autoScrolling:false//是否按照插件方式滚动，如果false就会出现默认滚动条
+				scrollBar:false,  //是否出现滚动条
+				paddingTop:'200px',
+				paddingBottom:'200px',
+				fixedElements:'#header',
+				keyboardScrolling:true,//打开键盘控制
+				//touchSensitivity: 5 ,    //移动设备中滑动页面的敏感度，默认为5
+				continuousVertical:true,
+				animateAnchor:false,
+				afterLoad:function(anchorLink,index){
+					$('#header li').removeClass();
+					$('#header li').eq(index-1).addClass('on');
+					if(index==2){
+						$('.section2 .pic').animate({left:'0px'},1500, 'easeOutExpo')
+						$('.section2 .describe').animate({left:'550px'},1500, 'easeOutExpo')
+
+					}
+					if(index==3){
+						$(".section3 img").animate({left:0},1500, 'easeOutExpo');
+					}
+					if(index==4){
+						$('.div').animate({top:'0px'},1500, 'easeOutExpo');
+					}
+				}
+			});
+			
+		})
+	</script>
+</body>
+</html>
